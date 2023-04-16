@@ -1,5 +1,5 @@
 export const BaseColors = {
-  primary: '#3CC4DB',
+  primary: '#752FFF',
   secondary: '#E4007C',
   textLighBlue: '#3CC4DB80',
   lightPink: '#FFF9FC',
@@ -7,7 +7,7 @@ export const BaseColors = {
   textColor: '#3B3B3B',
   msgColor: '#676767',
   lightYellow: '#FFFCF2',
-  yellow: '#F8C102',
+  yellow: '#FFBE00',
   red: '#FF0000',
   lightblue: '#F0FDFF',
   primaryLight: '#67ffff',

@@ -8,13 +8,13 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 import {EventRegister} from 'react-native-event-listeners';
 import SplashScreen from '@screens/SplashScreen';
 import {NotificationContext, NoInternet} from '@components';
 import RemotePushController from '@components/Common/RemotePushController';
-import notificationReducer from '@redux/reducers/notificationReducer';
+// import notificationReducer from '@redux/reducers/notificationReducer';
 import {store} from '@redux/store/configureStore';
 import AuthAction from '@redux/reducers/auth/actions';
 import {BaseColors, DarkBaseColor} from '@config/theme';
@@ -28,7 +28,7 @@ const intitialNotificationState = {
 };
 const IOS = Platform.OS === 'ios';
 
-function App() {
+function App_Start() {
   const dispatch = useDispatch();
   const {setBaseColor, setDarkmode, setActiveScreen} = AuthAction;
 
@@ -74,7 +74,7 @@ function App() {
   console.log('app theme ====>>>>> ', appTheme);
 
   const Stack = createStackNavigator();
-  const Tab = createBottomTabNavigator();
+  // const Tab = createBottomTabNavigator();
 
   // const BottomTabsNavigator = () => {
   //   return (
@@ -144,4 +144,4 @@ function App() {
   );
 }
 
-export default App;
+export default App_Start;

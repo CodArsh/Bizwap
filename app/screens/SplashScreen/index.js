@@ -1,19 +1,18 @@
 import React from 'react';
-import {StatusBar, View, Text} from 'react-native';
+import {StatusBar, View, Text, ImageBackground, Image} from 'react-native';
+import {Images} from '../../config/images';
 import styles from './styles';
 
 const SplashScreen = ({navigation}) => {
   return (
-    <>
+    <View style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
       <StatusBar
         backgroundColor={'#0000'}
         translucent
         barStyle="light-content"
       />
-      <View style={styles.container}>
-        <Text>ddfhdgiuhuih</Text>
-      </View>
-    </>
+      <Image source={Images.splash} />
+    </View>
   );
 };
 
