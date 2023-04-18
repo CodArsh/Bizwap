@@ -7,4 +7,5 @@ export const Images = {
   pic1: require('../../android/assets/welcome-screen/a.png'),
   pic2: require('../../android/assets/welcome-screen/b.png'),
   pic3: require('../../android/assets/welcome-screen/c.png'),
+  logo: require('../../android/assets/welcome-screen/Logo.png'),
 };

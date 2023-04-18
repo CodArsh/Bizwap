@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, StatusBar} from 'react-native';
 import React from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {Images} from '../../config/images';
@@ -28,18 +28,34 @@ export default function Intro() {
   ];
   const renderItem = ({item}) => {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: item?.key !== 3 ? 'center' : null,
+          alignItems: 'center',
+        }}>
         <Image
           style={{
             width: 325,
             height: 399,
             position: item?.key === 3 ? 'relative' : null,
-            top: item?.key === 3 ? -BaseSetting.nWidth / 1.9 : null,
+            top: item?.key === 3 ? -BaseSetting.nWidth / 6 : null,
             right: item?.key === 3 ? -BaseSetting.nWidth / 3 : null,
           }}
           resizeMode={'contain'}
           source={item?.image}
         />
+        {item?.key === 3 && (
+          <View
+            style={{
+              marginVertical: 25,
+              backgroundColor: BaseColors.primary,
+              padding: 5,
+              borderRadius: 5,
+            }}>
+            <Image source={Images.logo} />
+          </View>
+        )}
         <View style={{marginVertical: 20}}>
           <Text style={{textAlign: 'center', fontSize: 18, marginBottom: 5}}>
             {item.title}
@@ -103,6 +119,7 @@ export default function Intro() {
   };
   return (
     <View style={{flex: 1}}>
+      <StatusBar />
       <AppIntroSlider
         data={data}
         renderItem={renderItem}
