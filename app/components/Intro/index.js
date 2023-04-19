@@ -1,11 +1,11 @@
 import {View, Text, Image, TouchableOpacity, StatusBar} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {Images} from '../../config/images';
 import {BaseColors} from '../../config/theme';
 import BaseSetting from '../../config/setting';
 
-export default function Intro() {
+export default function Intro({navigation}) {
   const data = [
     {
       key: 1,
@@ -68,6 +68,7 @@ export default function Intro() {
   const renderSkipButton = () => {
     return (
       <TouchableOpacity
+        // onPress={ goToSlide(data.length - 1)}
         style={{
           backgroundColor: BaseColors.primary,
           paddingVertical: 13,
@@ -84,6 +85,7 @@ export default function Intro() {
     return (
       <View>
         <TouchableOpacity
+          onPress={() => navigation.navigate('signup')}
           style={{
             backgroundColor: BaseColors.primary,
             paddingVertical: 13,
@@ -100,6 +102,7 @@ export default function Intro() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+         onPress={() => navigation.navigate('login')}
           style={{
             backgroundColor: BaseColors.yellow,
             paddingVertical: 13,
@@ -118,12 +121,12 @@ export default function Intro() {
     );
   };
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: BaseColors.lightblue}}>
       <StatusBar />
       <AppIntroSlider
         data={data}
         renderItem={renderItem}
-        showSkipButton
+        // showSkipButton
         bottomButton
         renderSkipButton={renderSkipButton}
         renderDoneButton={renderDoneButton}
